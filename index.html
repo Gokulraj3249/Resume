@@ -29,7 +29,7 @@
         let users={"data":[{
                 "name": "GOKULRAJ M",
                 "des": "STUDENT",
-                "img": "photo.jpg",
+                "img": "photo1.jpg",
                 "add": "14/32, AMMAN KOVIL STEERT, VENNANDUR, NAMAKKAL PIN CODE:637505.",
                 "phone": "8220890957",
                 "mail":"smartgokul7505@gmail.com",
@@ -67,8 +67,8 @@
             users.data.forEach((user,index)=>{
                 htmlContent=`${htmlContent}
       <div class="leftbox">
-        <img id="img" src="${user.img}" />
-        <div class="content"><br>
+        <div id="img" style="background-image:url('${user.img}');" ></div>
+        <div class="content"><br><br>
           <h2 style="padding-left: 10px;">Contact Me</h2>
           <hr><br>
           <div class="icon">

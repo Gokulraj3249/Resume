@@ -31,9 +31,11 @@ body{
 
 }
 
-img{
+#img{
     width: 250px;
     height: 250px;
+    background-position: center;
+    background-size: 106%;
     border-radius: 100%;
 }
 
