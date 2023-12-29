@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="resume1.css" />
+    <title>RESUME</title>
+    <link rel="icon" href="photo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/all.css">
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+
+    <script>
+        let users={"data":[{
+                "name": "GOKULRAJ M",
+                "des": "STUDENT",
+                "img": "photo.jpg",
+                "add": "14/32, AMMAN KOVIL STEERT, VENNANDUR, NAMAKKAL PIN CODE:637505.",
+                "phone": "8220890957",
+                "mail":"smartgokul7505@gmail.com",
+                "skills": ["JAVA", "HTML", "CSS", "JS", "MS Office","TALLY"],
+                "bio": "To secure a challenging position in a reputable organization to expand my learnings, knowledge and skills. Secure a responsible career opportunity to fully utilize my training and skills, While making a significant contribution to the success of the company.",
+                "qualification": [
+                    {
+                    "sn": "01",
+                    "class": "KONGUNADU ART'S AND SCIENCE, COIMBATORE.",
+                    "dep": "BACHELOR OF BUSINESS ADMINISTRATION",
+                    "year": "2020-2023",
+                    "per": "70%"
+                    },
+                    {
+                    "sn": "02",
+                    "class": "GOVERMENT HR SEC SCHOOL, VENNANDUR.",
+                    "dep": "HSC",
+                    "year": "2019-2020",
+                    "per": "65%"
+                    },
+                    {
+                    "sn": "03",
+                    "class": "GOVERMENT HR SEC SCHOOL, VENNANDUR.",
+                    "dep": "SSLC",
+                    "year": "2017-2018",
+                    "per": "75%"
+                    }
+                ],
+                "pro": "BRITANNIA INDUSTRIES COMPANY FINANCIAL ANALYSIS."
+            }]
+            }
+
+        function loaddata(){
+            let htmlContent = "";
+            users.data.forEach((user,index)=>{
+                htmlContent=`${htmlContent}
+      <div class="leftbox">
+        <img id="img" src="${user.img}" />
+        <div class="content"><br>
+          <h2 style="padding-left: 10px;">Contact Me</h2>
+          <hr><br>
+          <div class="icon">
+            <i class="fa-solid fa-location-dot"></i>
+            <p style="padding-left: 20px;"> ${user.add}
+            </p>
+          </div>
+          <div class="text">
+            <i class="fa-regular fa-envelope"></i>
+            <p style="padding-left: 20px ;">${user.mail}</p>
+          </div>
+          <div class="con">
+            <i class="fa-solid fa-phone"></i>
+            <p style="padding-left: 20px;">${user.phone}</p>
+          </div>
+          <br>
+        </div>
+        <div>
+          <h2 style="padding-left: 10px;">Skills</h2>
+          <hr>
+          <div class="skill">
+            <ul>
+              <br>`
+              user.skills.forEach(skill=>{
+                htmlContent=`${htmlContent}<li>${skill}</li>`
+              })
+              htmlContent=`${htmlContent} </ul>
+          </div>
+
+        </div>
+      </div>
+      <div class="rightbox">
+        <div class="name">
+          <h1>${user.name}</h1>
+          <h4>${user.des}</h4>
+        </div>
+        <div class="main"><br><br><br><br>
+          <h3>Objective</h3>
+          <hr>
+          <p>${user.bio}</p>
+        </div>
+        <div class="edu">
+          <h3>EDUCATIONAL QUALIFICATION</h3>
+          <hr>
+          <div>
+            <table border="1">
+              <tr style="text-align: center;">
+                <td>S.No</td>
+                <td>Institution/university</td>
+                <td>Department</td>
+                <td>Year of passing</td>
+                <td>CGPA/Percentage</td>
+              </tr>`
+              
+              user.qualification.forEach((con,conindex)=>{
+              htmlContent=`${htmlContent}<tr style="text-align: center;">
+                <td> ${con.sn}</td>
+                <td>${con.class}</td>
+                <td>${con.dep}</td>
+                <td>${con.year}</td>
+                <td>${con.per}</td>
+              </tr>`
+            })
+              htmlContent=`${htmlContent}</table>
+          </div>
+          <div><br>
+            <h3>Project</h3>
+            <hr><br>
+            <h5 style="padding-left: 30px;">➢ ${user.pro}</h5>
+          </div>
+
+      </div>
+    `
+
+            })
+            // document.getElementById("call").innerHTML=htmlContent;
+            $("#call").html(htmlContent);
+            
+        }
+    </script>
+</head>
+
+<body>
+    <div class="box" id="call">
+
+    </div>
+    <script>
+        loaddata();
+    </script>
+
+</body>
+
+</html>
